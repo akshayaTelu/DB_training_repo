@@ -1,0 +1,110 @@
+{
+  "datasets": [
+    {
+      "name": "13c21555",
+      "displayName": "employees",
+      "queryLines": [
+        "SELECT * FROM training_25.akshaya.employees"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "167879f2",
+      "displayName": "Untitled page",
+      "layout": [
+        {
+          "widget": {
+            "name": "d9e62a4e",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "13c21555",
+                  "fields": [
+                    {
+                      "name": "ename",
+                      "expression": "`ename`"
+                    },
+                    {
+                      "name": "sum(salary)",
+                      "expression": "SUM(`salary`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "scatter",
+              "encodings": {
+                "x": {
+                  "fieldName": "ename",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fieldName": "sum(salary)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Employees_dashboard",
+                "showDescription": true,
+                "description": "This is sample dashboard"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 3,
+            "height": 5
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "77221472",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "0d30498b",
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {},
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "genieSpace": {
+      "isEnabled": true,
+      "enablementMode": "ENABLED"
+    },
+    "applyModeEnabled": false
+  }
+}
